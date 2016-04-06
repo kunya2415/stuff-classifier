@@ -137,6 +137,9 @@ class StuffClassifier::Base
     max_prob = @min_prob
     best = nil
 
+
+    p "!!!!!!!!!!!!!!!!!!!!!!!!!!!   STARTING enter to 'CAT_SCORES'   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
     scores = cat_scores(text)
     scores.each do |score|
       cat, prob = score
@@ -146,6 +149,8 @@ class StuffClassifier::Base
       end
     end
     
+    p "!!!!!!!!!!!!!!!!!!!!!!!!!!!!  VALUE of BEST #{best} !!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
     # Return the default category in case the threshold condition was
     # not met. For example, if the threshold for :spam is 1.2
     #
