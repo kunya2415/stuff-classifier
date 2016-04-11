@@ -18,7 +18,7 @@ class StuffClassifier::Bayes < StuffClassifier::Base
   def word_prob(word, cat)
     total_words_in_cat = total_word_count_in_cat(cat)
     return 0.0 if total_words_in_cat == 0
-    (word_count(word, cat).to_f + 1.0) / (total_words_in_cat  + 1)
+    word_count(word, cat).to_f / total_words_in_cat 
   end
 
 
