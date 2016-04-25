@@ -39,7 +39,7 @@ class StuffClassifier::Bayes < StuffClassifier::Base
   def doc_prob(text, category)
     @tokenizer.each_word(text).map {|w|
       word_weighted_average(w, category)
-    }.inject(1) {|p,c| p * c}
+    }.inject(0) {|p,c| p + Math.log(c)}
   end
 
   def text_prob(text, category)
